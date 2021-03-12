@@ -1,13 +1,16 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
+import Header from '../components/Header';
+import Card from '../components/Card';
+
+
 const NewsListScreen = () => {
 
     return (
         <View>
-            <Text>
-                News List Screen
-            </Text>
+            <Header />
+            <Card />
         </View>
     )
 }
