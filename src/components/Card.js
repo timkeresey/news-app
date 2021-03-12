@@ -12,10 +12,10 @@ const Card = () => {
                 />
             </View>
             <View style={styles.titleWrapper}>
-                <Text>Dummy Title</Text>
+                <Text style={styles.title}>Dummy Title</Text>
             </View>
             <View style={styles.descriptionWrapper}>
-            <Text>Dummy Description</Text>
+                <Text style={styles.description}>Dummy Description</Text>
             </View>
         </View>
     )
@@ -55,6 +55,16 @@ const styles = StyleSheet.create({
    image: {
        height: '110%',
        width: '100%',
+   },
+
+   title: {
+        fontSize: 20,
+        marginTop: 10,
+   },
+
+   description: {
+       fontSize: 15, 
+       marginTop: 10,
    }
 })
 
