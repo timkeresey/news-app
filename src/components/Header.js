@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         textAlign: 'center',
         fontSize: 20,
-        color: Platform.OS === 'android' ? '#ffffff' : '#72bcd4'
+        color: Platform.OS === 'android' ? '#ffffff' : '#72bcd4' 
     }
 })
 
