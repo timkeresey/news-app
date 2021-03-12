@@ -1,12 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, Platform } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 const Card = () => {
 
     return (
         <View style={styles.card}>
             <View style={styles.imageWrapper}>
-
+                <Image 
+                    source={require('../../assets/news.jpeg')} 
+                    style={styles.image}
+                />
             </View>
             <View style={styles.titleWrapper}>
                 <Text>Dummy Title</Text>
@@ -47,6 +50,11 @@ const styles = StyleSheet.create({
 
    descriptionWrapper: {
         paddingHorizontal: 15,
+   },
+
+   image: {
+       height: '110%',
+       width: '100%',
    }
 })
 
