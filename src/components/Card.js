@@ -13,10 +13,10 @@ const Card = (props) => {
                     />
                 </View>
                 <View style={styles.titleWrapper}>
-                    <Text style={styles.title}>Dummy Title</Text>
+                    <Text style={styles.title}>Breaking News</Text>
                 </View>
                 <View style={styles.descriptionWrapper}>
-                    <Text style={styles.description}>Dummy Description</Text>
+                    <Text style={styles.description}>The chicken crossed the road</Text>
                 </View>
             </View>
         </TouchableOpacity>
@@ -60,11 +60,13 @@ const styles = StyleSheet.create({
    },
 
    title: {
+        fontFamily: 'Ubuntu-Bold',
         fontSize: 20,
         marginTop: 10,
    },
 
    description: {
+       fontFamily: 'Ubuntu',
        fontSize: 15, 
        marginTop: 10,
    }
