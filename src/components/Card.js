@@ -1,23 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
-const Card = () => {
+const Card = (props) => {
 
     return (
-        <View style={styles.card}>
-            <View style={styles.imageWrapper}>
-                <Image 
-                    source={require('../../assets/news.jpeg')} 
-                    style={styles.image}
-                />
+        <TouchableOpacity onPress={() => props.navigation.navigate('NewsDetails')}>
+            <View style={styles.card}>
+                <View style={styles.imageWrapper}>
+                    <Image 
+                        source={require('../../assets/news.jpeg')} 
+                        style={styles.image}
+                    />
+                </View>
+                <View style={styles.titleWrapper}>
+                    <Text style={styles.title}>Dummy Title</Text>
+                </View>
+                <View style={styles.descriptionWrapper}>
+                    <Text style={styles.description}>Dummy Description</Text>
+                </View>
             </View>
-            <View style={styles.titleWrapper}>
-                <Text style={styles.title}>Dummy Title</Text>
-            </View>
-            <View style={styles.descriptionWrapper}>
-                <Text style={styles.description}>Dummy Description</Text>
-            </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
