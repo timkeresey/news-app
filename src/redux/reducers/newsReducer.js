@@ -28,7 +28,7 @@ export default function(state=initialState, action) {
                 }
             } else {
                 // item does not exist in favorites
-                const article = state.articles.find(article => article.url === action.payload);
+                const article = state.articles.articles.find(article => article.url === action.payload);
                 return {
                     ...state,
                     favorites: state.favorites.concat(article)
