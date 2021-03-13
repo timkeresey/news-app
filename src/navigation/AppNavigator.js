@@ -6,7 +6,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {MaterialIcons} from '@expo/vector-icons';
 
 import NewsListScreen from '../screens/NewsListScreen';
-import NewsDetailsScreen from '../screens/NewsListScreen';
+import NewsDetailsScreen from '../screens/NewsDetailsScreen';
 import FavoritesScreen from '../screens/FavoriteScreen';
 import AboutScreen from '../screens/AboutScreen';
 
