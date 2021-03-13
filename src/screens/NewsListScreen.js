@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, FlatList} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
 import Card from '../components/Card';
-import * newsAction from '../reduc/actions/newsAction';
+import * as newsAction from '../redux/actions/newsAction';
 
 
 const NewsListScreen = (props) => {
@@ -14,10 +14,21 @@ const NewsListScreen = (props) => {
         dispatch(newsAction.fetchArticles())
     }, [dispatch]);
 
-    const articles = useSelector(state => state.news.articles);
+    const {articles} = useSelector(state => state.news.articles);
 
     return (
-        <Card navigation={props.navigation} />
+        <FlatList
+            data={articles}
+            keyExtractor={item => item.url}
+            renderItem={({item}) => (
+                <Card 
+                    navigation={props.navigation} 
+                    title={item.title}
+                    image={item.urlToImage}
+                    description={item.description}
+                />
+            )}
+        />
     );     
 }
 

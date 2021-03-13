@@ -9,16 +9,16 @@ const Card = (props) => {
             <View style={styles.card}>
                 <View style={styles.imageWrapper}>
                     <Image 
-                        source={require('../../assets/news.jpeg')} 
+                        source={{uri: props.image}} 
                         style={styles.image}
                     />
                 </View>
                 <View style={styles.titleWrapper}>
-                    <Text style={styles.title}>Breaking News</Text>
+                    <Text style={styles.title}>{props.title}</Text>
                     <MaterialIcons name='favorite-border' color='#72bcd4' size={24} />
                 </View>
                 <View style={styles.descriptionWrapper}>
-                    <Text style={styles.description}>The chicken crossed the road</Text>
+                    <Text style={styles.description}>{props.description}</Text>
                 </View>
             </View>
         </TouchableOpacity>
