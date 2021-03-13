@@ -1,3 +1,4 @@
+import { FETCH_ARTICLES } from "../actions/newsAction";
 
 const initialState = {
     articles: [],
@@ -5,5 +6,13 @@ const initialState = {
 }
 
 export default function(state=initialState, action) {
+
+    switch (action.type) {
+        case FETCH_ARTICLES:
+            return {
+                ...state,
+                articles: action.payload
+            }
+    }
     return state;
 }
