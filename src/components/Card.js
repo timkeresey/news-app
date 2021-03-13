@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
-import { useDispatch } from 'react-redux';
-import {useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import * as newsAction from '../redux/actions/newsAction';
 
@@ -16,13 +15,13 @@ const Card = (props) => {
             <View style={styles.card}>
                 <View style={styles.imageWrapper}>
                     <Image 
-                        source={{uri: props.image}} 
+                        source={{uri: props.image ? props.image : 'https://www.andromo.com/blog/wp-content/uploads/2020/12/news-1.jpg'}} 
                         style={styles.image}
                     />
                 </View>
                 <View style={styles.titleWrapper}>
                     <Text style={styles.title}>
-                        {props.title.length > 25 ? props.title.slice(0, 25) + '...' : props.title}
+                        {props.title && props.title.length > 25 ? props.title.slice(0, 25) + '...' : props.title}
                     </Text>
                     <MaterialIcons 
                         name={isFav ? 'favorite' : 'favorite-border'} 
@@ -35,7 +34,7 @@ const Card = (props) => {
                 </View>
                 <View style={styles.descriptionWrapper}>
                     <Text style={styles.description}>
-                        {props.description.length > 100 ? props.description.slice(0, 100) + '...' : props.description}
+                        {props.description && props.description.length > 100 ? props.description.slice(0, 100) + '...' : props.description}
                     </Text>
                 </View>
             </View>
