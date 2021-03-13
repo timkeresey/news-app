@@ -1,4 +1,4 @@
-import { FETCH_ARTICLES } from "../actions/newsAction";
+import { FETCH_ARTICLES, TOGGLE_FAVORITES } from "../actions/newsAction";
 
 const initialState = {
     articles: [],
@@ -12,6 +12,27 @@ export default function(state=initialState, action) {
             return {
                 ...state,
                 articles: action.payload
+            }
+
+        case TOGGLE_FAVORITES: 
+            // Add or remove item from favorites
+            const index = state.favorites.findIndex(article => article.url === action.payload);
+
+            if (index >= 0) {
+                // Item exists in favorites
+                const favorites = [...state.favorites];
+                favorites.splice(index, 1);
+                return {
+                    ...state,
+                    favorites: favorites
+                }
+            } else {
+                // item does not exist in favorites
+                const article = state.articles.find(article => article.url === action.payload);
+                return {
+                    ...state,
+                    favorites: state.favorites.concat(article)
+                }
             }
     }
     return state;

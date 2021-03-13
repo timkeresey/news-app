@@ -1,5 +1,5 @@
 export const FETCH_ARTICLES = 'FETCH_ARTICLES';
-export const ADD_FAVORITES = 'ADD_FAVORITES';
+export const TOGGLE_FAVORITES = 'TOGGLE_FAVORITES';
 
 export const fetchArticles = () => {
     return async dispatch => {
@@ -12,5 +12,12 @@ export const fetchArticles = () => {
             type: FETCH_ARTICLES,
             payload: resultData
         })
+    }
+}
+
+export const toggleFavorites = (url) => {
+    return {
+        type: TOGGLE_FAVORITES,
+        payload: url
     }
 }
