@@ -4,7 +4,7 @@ import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import { StyleSheet, Text, View } from 'react-native';
 
-import NewsListScreen from './src/screens/NewsListScreen';
+import AppNavigator from './src/navigation/AppNavigator';
 
 
 const loadFonts = () => {
@@ -29,7 +29,7 @@ export default function App() {
   }
 
   return (
-    <NewsListScreen />
+    <AppNavigator />
   );
 }
 
